@@ -1,27 +1,22 @@
 import { useState } from 'react'
 import { Routes , Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './component/Navbar'
-import Feed from './component/Feed/Feed'
-import Profile from './component/profile/Profile'
-import User from './component/user/User'
 
+import SignIn from './Sign-in'
+import AppContainer from './App-container'
 function App() {
   
   
 
   return (
-    <main className='bg-emerald-800  h-screen w-full'>
-      <Navbar />
-      <div className='content p-2 bg-emerald-600 mt-5 mx-2 rounded-lg'>
+    <main className='bg-emerald-800  h-full w-full'>
+      <Routes>
 
-        <Routes>
-          <Route path='/' element={<Feed />} />
-          <Route path='/feed' element={<Feed />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/user' element={<User />} />
-        </Routes>
-      </div>
+        
+        <Route path='/*' element={<AppContainer />} />
+        <Route path='/signin' element={<SignIn />} />
+      </Routes>
+
 
     </main>
   )

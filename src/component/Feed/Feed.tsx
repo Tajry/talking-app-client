@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
+import FeedContainer from './Feed-container'
 
 export default function Feed() {
   const [searchParams , setSearchParams]= useSearchParams()
@@ -7,6 +8,8 @@ export default function Feed() {
 
 
   return (
-    <div>Feed</div>
+    <main>
+      <FeedContainer />
+    </main>
   )
 }

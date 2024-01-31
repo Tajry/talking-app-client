@@ -12,7 +12,6 @@ export default function Navbar() {
         }else {
             setInputsearch(true);
         }
-        // console.log(inputsearch)
     }
 
 
