@@ -7,6 +7,7 @@ import User from './component/user/User'
 import SignIn from './Sign-in'
 import FormEdit from './component/user/From-edit'
 import ComentContainer from './component/comment/comment-container'
+import ViewUser from './component/view_user/viewuser'
 
 export default function AppContainer() {
   return (
@@ -20,6 +21,7 @@ export default function AppContainer() {
             <Route path='/user' element={<User />} />
             <Route path='/edit/:id' element={<FormEdit  />} />
             <Route path='/view/:id' element={<ComentContainer/>} />
+            <Route path='/viewuser/:username' element={<ViewUser/>} />
           </Routes>
       </div>
 

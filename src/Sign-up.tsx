@@ -13,6 +13,10 @@ export default function SignUp() {
         return alert('Passworld not macth')
     }
 
+    if (password.length < 8) {
+        return alert("password char 8")
+    }
+
     const res = await fetch('http://localhost:3000/authen/signup' , {
       method:'post',
       headers:{
@@ -29,7 +33,7 @@ export default function SignUp() {
       localStorage.setItem('token' , data.token)
       window.location.href = "/signin"
     }else {
-      alert("Username or Password is worng!!!")
+      alert("Username already exis")
     }
 
 
