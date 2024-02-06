@@ -18,7 +18,7 @@ export default function PostsItems({posts , fetchdata}:{posts:any ,fetchdata:any
       } else {
         window.location.href = "/signin"
       }
-    }
+    } 
   }
 
 
@@ -40,7 +40,7 @@ export default function PostsItems({posts , fetchdata}:{posts:any ,fetchdata:any
         </div>
         <hr />
         <div className="foot p-2 flex justify-end">
-            <Link to={'/view'} className='text-sm text-emerald-50 text-right'>veiw commend</Link>
+            <Link to={`/view/${posts.id}`} className='text-sm text-emerald-50 text-right'>veiw commend</Link>
             <Link to={`/edit/${posts.id}`} className='text-sm text-emerald-50 text-right mx-2'>Edit</Link>
             <button className='text-sm text-emerald-50 text-right mx-2' id={posts.id} onClick={handleDelete}>Delete</button>
         </div>

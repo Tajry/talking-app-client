@@ -20,7 +20,7 @@ export default function FeedItems({feed}:{feed:any}) {
         </div>
         <hr />
         <div className="foot p-2 flex justify-end">
-            <Link to={'/view'} className='text-sm text-emerald-50 text-right'>veiw commend</Link>
+            <Link to={`/view/${feed.id}`} className='text-sm text-emerald-50 text-right'>veiw commend</Link>
         </div>
     </div>
   )

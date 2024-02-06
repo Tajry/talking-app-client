@@ -4,6 +4,7 @@ import './App.css'
 
 import SignIn from './Sign-in'
 import AppContainer from './App-container'
+import SignUp from './Sign-up'
 function App() {
   
   
@@ -15,6 +16,7 @@ function App() {
         
         <Route path='/*' element={<AppContainer />} />
         <Route path='/signin' element={<SignIn />} />
+        <Route path='/signup' element={<SignUp />} />
       </Routes>
 
 

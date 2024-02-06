@@ -14,7 +14,7 @@ export default function User() {
         }
       })
     if (!res.ok) {
-    //  return window.location.href = '/signin'
+     return window.location.href = '/signin'
     }
     const json =  await res.json()
     setData(json.data)

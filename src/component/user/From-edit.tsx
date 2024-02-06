@@ -33,32 +33,54 @@ export default function FormEdit() {
 
   useEffect(()=>{
     getPosts()
+    
   },[])
 
   async function handleSubmit(e:FormEvent) {
-    e.preventDefault();
-    const res  = await fetch('http://localhost:3000/posts/update/'+id,{
-      method:'post',
-      headers:{
-        "Content-Type":'application/json',
-        "authorization":'Bearer '+token,
-      },
-      body:JSON.stringify({
-        content:content
+    e.preventDefault()
+    if (content == '') {
+      const res  = await fetch('http://localhost:3000/posts/update/'+id,{
+        method:'post',
+        headers:{
+          "Content-Type":'application/json',
+          "authorization":'Bearer '+token,
+        },
+        body:JSON.stringify({
+          content:oldContent
+        })
       })
-    })
+  
+      if (!res.ok) {
+        window.location.href = "/signin"
+      }
+      setContent('')
+      window.location.href = '/user'
+    }else {
+      const res  = await fetch('http://localhost:3000/posts/update/'+id,{
+        method:'post',
+        headers:{
+          "Content-Type":'application/json',
+          "authorization":'Bearer '+token,
+        },
+        body:JSON.stringify({
+          content:content
+        })
+      })
+  
+      if (!res.ok) {
+        window.location.href = "/signin"
+      }
+      setContent('')
+      window.location.href = '/user'
 
-    if (!res.ok) {
-      window.location.href = "/signin"
     }
-    setContent('')
-    window.location.href = '/user'
+   
     
   }
   return (
     <form onSubmit={handleSubmit}>
         <div >
-            <textarea placeholder='what is heppen....' className='rounded-lg p-2 w-full' onChange={e => setContent(e.target.value)} defaultValue={oldContent}>
+            <textarea placeholder='what is heppen....' className='rounded-lg p-2 w-full' onChange={e => setContent(e.target.value)}  defaultValue={oldContent}>
                
             </textarea>
         </div>

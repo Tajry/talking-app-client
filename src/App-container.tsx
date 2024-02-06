@@ -6,6 +6,7 @@ import Profile from './component/profile/Profile'
 import User from './component/user/User'
 import SignIn from './Sign-in'
 import FormEdit from './component/user/From-edit'
+import ComentContainer from './component/comment/comment-container'
 
 export default function AppContainer() {
   return (
@@ -15,9 +16,10 @@ export default function AppContainer() {
           <Routes>
             <Route path='/feed' element={<Feed />} />
             <Route path='/feed' element={<Feed />} />
-            <Route path='/profile' element={<Profile />} />
+            <Route path='/profile/*' element={<Profile />} />
             <Route path='/user' element={<User />} />
             <Route path='/edit/:id' element={<FormEdit  />} />
+            <Route path='/view/:id' element={<ComentContainer/>} />
           </Routes>
       </div>
 
